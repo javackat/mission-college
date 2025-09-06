@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import java.util.Stack;
 /*
-    Implement Calculor with a stack
+    Implement Calculor with a stack of doubles
     Works only with a stack 2 items deep
     Further enchancements would allow for a deeper stack
 
@@ -31,11 +31,12 @@ public class Calculator {
     public void input (){
 
         Scanner scan = new Scanner(System.in);
-        Stack <Integer> stacker;
+        Stack <Double> stacker;
 
-        int total=0;
+        double total=0;
         String v,op;
-        int x,y=0;
+        double x,y=0.0;
+
         stacker = new Stack<>();
 
         do{
@@ -50,7 +51,7 @@ public class Calculator {
                     stacker.push( x+y);        // push back onto stack (x,y no longer on stack)
                     System.out.println(">" + total );
 
-                break;
+                    break;
 
                 case "-":
                     x = stacker.pop();
@@ -91,12 +92,13 @@ public class Calculator {
                     System.out.println("show Stack" + stacker.peek() );
                     System.out.println("stacker " + stacker);
 
-                     break;
+                    break;
                 default: // push number onto stack
-                    x = Integer.parseInt(  v );
+                    x = Double.parseDouble(  v );
+
 
                     stacker.push( x );
-                     System.out.println("> " + x);
+                    System.out.println("> " + x);
 
 
             }
